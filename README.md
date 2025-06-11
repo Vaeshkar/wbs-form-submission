@@ -47,3 +47,14 @@ Once the application is running in your browser, follow the on-screen instructio
 - Make sure you have `Node.js` and `npm` installed.
 
 - If port `5173` is busy, Vite might use another one, check the terminal!
+
+---
+
+## Changelog
+
+### 2025-06-11
+
+- ✅ Fixed product search filters: category + query + price range
+- ➕ Added select fields to `SearchForm` for more accurate filtering
+- 🛠️ Resolved edge case: “All Categories” now triggers proper search
+- 🧪 Improved error handling and logging for Search page

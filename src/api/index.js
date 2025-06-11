@@ -9,12 +9,12 @@ const contactFormSchema = z.object({
   message: z.string('Message needs to be a string').min(1, 'Message is required')
 });
 
-const productSearchSchema = z.object({
+  const productSearchSchema = z.object({
   category: z.string().optional(),
   minPrice: z.number().nonnegative().optional(),
   maxPrice: z.number().nonnegative().optional(),
   query: z.string().optional()
-});
+  });
 
 export const registerNewsletter = async email => {
   await new Promise(resolve => setTimeout(resolve, 1000));
@@ -51,7 +51,7 @@ export const searchProducts = async ({ category, minPrice, maxPrice, query } = {
   if (!response.ok) return { error: 'Something went wrong while fetching products', products: [] };
   const products = await response.json();
   const filteredProducts = products.filter(product => {
-    const matchesCategory = !data.category || product.category === data.category;
+    const matchesCategory = !data.category || product.category.toLowerCase() === data.category.toLowerCase();
     const matchesMinPrice = data.minPrice === undefined || product.price >= data.minPrice;
     const matchesMaxPrice = data.maxPrice === undefined || product.price <= data.maxPrice;
     const matchesQuery =
