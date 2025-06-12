@@ -9,12 +9,12 @@ const contactFormSchema = z.object({
   message: z.string('Message needs to be a string').min(1, 'Message is required')
 });
 
-  const productSearchSchema = z.object({
+const productSearchSchema = z.object({
   category: z.string().optional(),
   minPrice: z.number().nonnegative().optional(),
   maxPrice: z.number().nonnegative().optional(),
   query: z.string().optional()
-  });
+});
 
 export const registerNewsletter = async email => {
   await new Promise(resolve => setTimeout(resolve, 1000));
